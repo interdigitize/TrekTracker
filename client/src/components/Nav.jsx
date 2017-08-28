@@ -3,6 +3,7 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
 import {isLoggedIn} from '../helpers/helpers.js';
+import TrekTracker from '../components/TrekTracker.jsx';
 
 class Navbar extends React.Component {
   constructor (props) {
@@ -67,7 +68,7 @@ class Navbar extends React.Component {
     return (
       <div>
         <AppBar
-          title="TrekTracker"
+          title={<TrekTracker/>}
           onLeftIconButtonTouchTap={this.handleToggle}
           style={{backgroundColor: '#668242'}}
         />

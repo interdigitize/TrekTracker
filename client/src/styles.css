@@ -27,6 +27,18 @@ body {
   overflow: hidden;
 }
 
+@media only screen and (min-width: 768px) {
+  .flex {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .flex-wrapper {
+    display: flex;
+  }
+
+}
+
 /*.content-wrap{
   overflow: hidden;
 }*/

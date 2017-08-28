@@ -57,7 +57,9 @@ class Calendar extends React.Component {
   }
 
   handleOpen () {
-    this.setState({formStatus: !this.state.formStatus});
+    if (this.state.isLoggedIn) {
+      this.setState({formStatus: !this.state.formStatus});
+    }
   }
 
   handleClose () {

@@ -27,7 +27,7 @@ class Calendar extends React.Component {
     this.RSVP = this.RSVP.bind(this);
 
     //Feel free to refactor if you can think of a better way to check when the page reloads
-    if (this.state.trails) {
+    if (this.props.trails) {
       this.isLoggedIn()
         .then((res) => {
           this.setState({

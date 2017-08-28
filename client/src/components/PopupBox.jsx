@@ -30,7 +30,7 @@ class Box extends Component {
           subtitle={this.props.trail.city + ', ' + this.props.trail.state}
         />
         <CardActions>
-          <FlatButton label='View Posts' onClick={this.redirect} />
+          <FlatButton label='More Info' onClick={this.redirect} />
         </CardActions>
       </Card>
     )

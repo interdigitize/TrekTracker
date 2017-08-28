@@ -76,19 +76,19 @@ class Trail extends React.Component {
             <Weather latitude={this.state.trailInfo.latitude} longitude={this.state.trailInfo.longitude} />
             {this.state.trailInfo ? <h1 className={'trailTitle'}>{this.state.trailInfo.name}</h1> : <span></span>}
           </div>
-          <div className={'content-wrap'} style={{marginTop: '100px'}}>
-            <div style={{width: '50%'}}>
+          <div className={'content-wrap flex-wrapper'} style={{marginTop: '100px'}}>
+            <div className={'flex'}>
               <div><p><span className={'bold'}>Trail Length</span>: {this.state.trailInfo ? this.state.trailInfo.traillength : <span></span>}</p></div>
               <div><p>{this.state.trailInfo ? this.state.trailInfo.description : <span></span>}</p></div>
               <div><p><span className={'bold'}>Directions</span>: {this.state.trailInfo ? this.state.trailInfo.directions : <span></span>}</p></div>
             </div>
-            <div style={{width: '50%'}}>
+            <div className={'flex'}>
               {this.state.galleryposts.length === 0 ? <div/> :
                 <ImageGallery className='imagegallery'
                   items={this.state.galleryposts}
                   slideInterval={2000}
                   onImageLoad={this.handleImageLoad}
-                  thumbnailPosition={'top'}
+                  thumbnailPosition={'bottom'}
                 />
               }
               {this.state.currentUser ? <Upload key={this.state.forceRerenderForm} getTrailPosts={this.getTrailPosts}/> : <div/>}

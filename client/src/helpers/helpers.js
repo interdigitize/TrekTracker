@@ -53,7 +53,7 @@ module.exports.galleryConversion = function(postsFromDatabase) {
     return {
       original: eachpost.image_url,
       thumbnail: eachpost.image_url,
-      description: `${eachpost.poster.firstname} ${eachpost.poster.lastname} ${eachpost.poster.email}
+      description: `${eachpost.poster.firstname} ${eachpost.poster.lastname}
                   : ${eachpost.text} ${time.parse(eachpost.createdAt, true)}`
     };
   });

@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
 
 router.post('/interested', (req, res) => {
   // profile photo url === req.user.photos[0].value
-  db.registerInterest(req.user.id, req.body.event.event_id)
+  db.registerInterest(req.user.id, req.body.event.id)
   .then((post) => {
     res.end(JSON.stringify(post));
   })

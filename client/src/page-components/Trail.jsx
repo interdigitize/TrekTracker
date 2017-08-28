@@ -66,9 +66,9 @@ class Trail extends React.Component {
     console.log('Image loaded ', event.target)
   }
 
-//          <Posts posts={this.state.posts} />
+//  <Posts posts={this.state.posts} />
   render() {
-    var imgUrl = this.state.galleryposts[0] || 'http://i.imgur.com/f8W2uvj.png';
+    var imgUrl = this.state.galleryposts[0].original || 'http://i.imgur.com/f8W2uvj.png';
     return (
       Object.keys(this.state.trailInfo).length === 0 ? (<div></div>) :
         (<div>

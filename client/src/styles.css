@@ -107,6 +107,16 @@ body {
   padding-top: .5em;
 }
 
+.trailPhoto {
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height:400px;
+}
+
 a {
   color: #4CAF50;
   font-weight: bold;

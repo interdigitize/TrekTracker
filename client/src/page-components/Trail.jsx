@@ -17,7 +17,8 @@ class Trail extends React.Component {
       galleryposts: [],
       currentUser: null,
       trailInfo: {},
-      forceRerenderForm: false
+      forceRerenderForm: false,
+      imgUrl: ''
     };
 
     //retrieve trail's posts from server/database
@@ -56,7 +57,8 @@ class Trail extends React.Component {
         this.setState({
           posts: response.data,
           galleryposts: galleryposts,
-          forceRerenderForm: !this.state.forceRerenderForm
+          forceRerenderForm: !this.state.forceRerenderForm,
+          imgUrl: galleryposts[0] ? galleryposts[0].original : 'http://i.imgur.com/f8W2uvj.png'
         });
         return true;
     });
@@ -66,13 +68,12 @@ class Trail extends React.Component {
     console.log('Image loaded ', event.target)
   }
 
-//  <Posts posts={this.state.posts} />
+// <Posts posts={this.state.posts} />
   render() {
-    var imgUrl = this.state.galleryposts[0].original || 'http://i.imgur.com/f8W2uvj.png';
     return (
       Object.keys(this.state.trailInfo).length === 0 ? (<div></div>) :
         (<div>
-          <div style={{backgroundImage: 'url(' + imgUrl + ')',  height: '400px', display: 'block'}}>
+          <div style={{backgroundImage: 'url(' + this.state.imgUrl + ')'}} className={'trailPhoto'}>
             <Weather latitude={this.state.trailInfo.latitude} longitude={this.state.trailInfo.longitude} />
             {this.state.trailInfo ? <h1 className={'trailTitle'}>{this.state.trailInfo.name}</h1> : <span></span>}
           </div>
